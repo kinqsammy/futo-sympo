@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/signup.css">
+<link rel="icon" type="image/icon" size="24*24" href="images/icon.png">
+<title>Register</title>
+</head>
+<body>
+<div class="Webcontainer">
+	<header class="head-class">
+		<h1 style="display: flex; width: 55%;">
+			<a style="display: flex; flex-wrap: wrap; align-items: center; text-decoration: none;color: white; margin-left: 30px; font-size: 28px;" href="index.html">
+				<img src="images/futo_logo.png" alt="futo_icon" style="padding: 8px;" width="50px" height="50px">SICT</a>
+		</h1>
+		
+	 	<div class="navbar">
+			<div class="menu-icon" onclick="toggleMenu()">
+				&#9776;
+			</div>
+				
+			<nav class="navbar-menu">
+				<a href="index.html" style="color: white;">HOME</a>
+				<a href="speakers.html" style="color: white;">SPEAKERS</a>
+				<a href="schedule.html" style="color: white;">SCHEDULE</a>
+				<a href="venue.html"style="color: white;">VENUE</a>
+				<a href="signup.html" style="color: white;">REGISTER</a>
+			</nav>
+		</div>
+	</header>
+
+	<div class="imgcontainer1">
+		<h2 class="reg" style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Register</h2>
+	</div>
+
+<div class="container2" id="popup">
+	<form id="myForm" method="post" action="form.php">
+		<div class="container">		
+			<div class="form_contain">
+				<p class="form_contain_text">Surname</p>
+				<input id="Sname" type="text" placeholder="eg. Jean" name="Sname" required>
+				<div id="SnameError" class="error-message"></div>
+			</div>
+
+			<div class="form_contain">
+				<p class="form_contain_text">First Name</p>
+				<input id="Fname" type="text" placeholder="eg. Cole" name="Fname" required>
+				<div id="FnameError" class="error-message"></div>
+			</div>
+
+			<div class="form_contain">
+				<p class="form_contain_text">Middle Name</p>
+				<input id="Lname" type="text" placeholder="eg. Somto" name="Lname" required>
+				<div id="LnameError" class="error-message"></div>
+			</div>
+
+			<div class="form_contain">
+				<p class="form_contain_text">Email Address</p>
+				<input id="email" type="email" placeholder="eg. je*******ol@g**l.com" name="email" autocomplete="on" required>
+				<div id="emailError" class="error-message"></div>
+			</div>
+
+			<div class="form_contain">
+				<p class="form_contain_text">Phone Number</p>
+				<input id="phone" type="number" placeholder="eg. 070******78" name="phone" required>
+				<div id="phoneError" class="error-message"></div>
+			</div>
+
+			<div class="form_contain">
+				<p class="form_contain_text">Department</p>
+				<input id="dept" type="text" placeholder="Choose Department" name="dept" onclick="toggleDroplist()" autocomplete="off" readonly>
+				<div id="deptList" class="dropdown_content" onclick="event.stopPropagation()">
+						<option value="INFORMATION TECHNOLOGY">INFORMATION TECHNOLOGY</option>
+						<option value="SOFTWARE ENGINEERING">SOFTWARE ENGINEERING</option>
+						<option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+						<option value="CYBER SECURITY">CYBER SECURITY</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form_contain">
+				<p class="form_contain_text">Year of Study</p>
+				<input id="level" type="text" placeholder="Choose Level" name="level" onclick="toggleDroplevel()" autocomplete="off" readonly>
+				<div id="levelList" class="dropdown_content" onclick="event.stopPropagation()">
+						<option value="100 LEVEL">100 LEVEL</option>
+						<option value="200 LEVEL">200 LEVEL</option>
+						<option value="300 LEVEL">300 LEVEL</option>
+						<option value="400 LEVEL">400 LEVEL</option>
+						<option value="500 LEVEL">500 LEVEL</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form_contain">
+				<p class="form_contain_text">Gender</p>
+				<input id="gender" type="text" placeholder="Select Gender" name="gender" onclick="toggleDropGender()" autocomplete="off" readonly>
+				<div id="genderList" class="dropdown_content" onclick="event.stopPropagation()">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+				</div>
+			</div>
+
+			<button type="submit" onclick="validateForm()">
+				<b style="font-weight: 700;">Submit</b>
+			</button>
+		</div>
+	</form>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="javascript/toggleMenu.js"></script>
+<script type="text/javascript" src="javascript/deptList.js"></script>
+<script type="text/javascript" src="javascript/levelList.js"></script>
+<script type="text/javascript" src="javascript/genderList.js"></script>
+<script>
+	function validateForm() {
+    var Sname = document.getElementById('Sname').value;
+    var Fname = document.getElementById('Fname').value;
+    var Lname = document.getElementById('Lname').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var SnameError = document.getElementById('SnameError');
+    var FnameError = document.getElementById('FnameError');
+    var LnameError = document.getElementById('LnameError');
+    var emailError = document.getElementById('emailError');
+    var phoneError = document.getElementById('phoneError');
+
+    SnameError.innerHTML = '';
+    FnameError.innerHTML = '';
+    LnameError.innerHTML = '';
+    emailError.innerHTML = '';
+    phoneError.innerHTML = '';
+
+    if (Sname === '') {
+        SnameError.innerHTML = 'Surame is required.';
+    }
+    if (Fname === '') {
+        FnameError.innerHTML = 'First Name is required.';
+    }
+    if (Lname === '') {
+        LnameError.innerHTML = 'Middle name is required.';
+    }
+    if (email === '') {
+        emailError.innerHTML = 'Email is required.';
+    }
+    if (phone === '') {
+        phoneError.innerHTML = 'Phone Number is required.';
+    }
+
+    if (Sname === '' || Fname === '' || Lname === '' || email === '' || phone === '') {
+        return; 
+    } else {
+        document.getElementById('myForm').submit();
+    }
+}
+</script>
+</body>
+</html>

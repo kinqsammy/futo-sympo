@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/icon" size="16*16" href="images/icon.png">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<title>Log in</title>
+</head>
+<body>
+	<div class="imgcontainer1">
+		</div>
+
+<div class="container2">
+	
+		<form id="loginForm">
+		<div class="container">
+		<div class="imgcontainer">
+		<img src="images/futo_logo.png" alt="logo" width="60px" height="60px">
+		</div>
+
+		<input id="username" type="text" placeholder="Username" name="username" required>
+
+    	<input id="password" type="password" placeholder="Password" name="password" required>
+
+  		<button type="submit"><b>Log In</b></button>
+
+    		<p style="font-size: 15px; font-family: Arial; color: #0073B1; font-weight: 500; padding-top: 8px; padding-bottom: 14px; text-decoration: none; margin:auto;">Having trouble logging in?</p>
+<p></p><p></p>
+		<div class="container3"><p></p></div>
+<hr>
+
+</div>
+
+</form>
+</div>
+
+<script>
+	const validCredentials = {
+		username: "admin",
+		password: "password123"
+	};
+	
+	document.getElementById("loginForm").addEventListener("submit", function(event) {
+		event.preventDefault(); 
+
+		const username = document.getElementById("username").value;
+		const password = document.getElementById("password").value;
+	
+		if (username === validCredentials.username && password === validCredentials.password) {
+			sessionStorage.setItem("isLoggedIn", "true");
+			window.location.href = "dashboard.php";
+	} 
+		else {
+			alert("Invalid username or password. Please try again.");
+		}
+	});
+	</script>
+</body>
+</html>
