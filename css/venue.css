@@ -1,0 +1,276 @@
+body {
+	background-color: #ffffff;
+	margin: auto;
+	width: auto;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Webcontainer {
+	min-width: 470px;
+}
+
+.container {
+	margin: auto;
+	padding: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: auto;
+	max-width: 70%;
+	min-width: 430px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.head-class {
+	position: relative;
+	min-width: 470px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	margin:auto; 
+	background-color: rgb(23, 172, 23);
+}
+
+.headline {
+	font-size: x-large;
+	font-weight: bolder;
+	text-align: center;
+	padding: 0px;
+	margin: auto;
+	position: relative;
+	width: max-content;
+	height: max-content;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: normal;
+	width: fit-content;
+	margin: auto;
+	position: relative;
+}
+
+.navbar-menu {
+	background-color: transparent;
+	display: flex;
+}
+
+.navbar-menu a {
+	width: max-content;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	height: auto;
+	margin:auto;
+	align-content: center;
+	display: flex;
+	text-align: center;
+	text-decoration: none;
+	padding: 2px;
+	padding-right: 18px;
+	padding-left: 18px;
+}
+
+.menu-icon {
+	display: none;
+	color: rgb(255, 255, 255);
+	font-weight: bolder;
+	font-size: 24px;
+	margin: auto;
+	z-index: 2;
+}
+
+.navbar-menu a:hover {
+	border-bottom: 2px solid white;
+	color: rgb(23, 172, 23);
+	height: 22px;
+	border-radius: 15px;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.event_contain_box {
+	position: relative;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	justify-content: flex-start;
+	margin: auto;
+	margin-top: 6%;
+	margin-bottom: 4%;
+	width: 75%;
+	height: 100%;
+	padding: 0px;
+	min-width: 300px;
+	max-width: 960px;
+}
+
+.vertical-line {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -25px;
+	width: 0;
+	border-left: 2px dotted black;
+	content: "";
+}
+
+.event_box {
+	display: flex;
+	flex-direction: column;
+	margin-left: 15%;
+	position: relative;
+}
+
+.events {
+	position: relative;
+}
+
+#text  {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+.progress{
+	height: 12px;
+	width: 12px;
+	border-radius: 40px;
+	background: black;
+	position: absolute;
+	left: -30px;
+	top: 20px;
+	z-index: 1;
+}
+
+.progress_stop{
+	height: px;
+	width: 8px;
+	border-radius: 40px;
+	position: absolute;
+	left: -38px;
+	top: 15px;
+	z-index: 1;
+  }
+
+  #map {
+	width: 600px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+  }
+
+
+@media (max-width: 725px) {
+  body {
+	min-width: 450px;
+  }
+
+  .Webcontainer {
+	min-width: 450px;
+	border: 0px solid #ffffff;
+	padding: 0px;
+  }
+
+  .head-class {
+    min-width: 450px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #text  {
+    font-size: 13px;
+    text-align: justify;
+  }
+
+  .container {
+	min-width: 405px;
+	max-width: 350px;
+    margin: auto;
+  }
+
+  .event_box {
+	margin: auto;
+	padding: 5px;
+	min-width: 350px;
+	max-width: 300px;
+  }
+
+  .events {
+	margin: 0px;
+	font-size: 16px;
+	min-width: 350px;
+	max-width: 300px;
+  }
+
+  .event_contain_box {
+    min-width: 340px;
+	max-width: 425px;
+	font-size: 14px;
+	margin-left: 4%;
+	margin-right: 4%;
+	margin-top: 6%;
+	margin-bottom: 4%;
+	min-width: 400px;
+	max-width: 425px;
+	display: flex;
+	justify-content: flex-start;
+  }
+
+  .progress{
+	height: 8px;
+	width: 8px;
+	border-radius: 40px;
+	background: black;
+	position: absolute;
+	left: -28px;
+	top: 22px;
+	z-index: 1;
+  }
+
+  .progress_stop{
+	height: 10px;
+	width: 10px;
+	border-radius: 40px;
+	position: absolute;
+	left: -39px;
+	top: 14px;
+	z-index: 1;
+  }
+
+  .menu-icon{
+	display: block;
+	cursor: pointer;
+  }
+
+  .navbar-menu {
+	display: none;
+	width: 100%;
+  }
+
+  .navbar-menu.active {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 13%;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(23, 172, 23);
+	transform: translateX(100%); /* Initially off-screen */
+	transition: transform 0.3s ease;
+	transform: translateX(0);
+	width: 35%;
+	height: 35%;
+	z-index: 15;
+  }
+
+  .navbar-menu.active a {
+	font-size: 12px;
+  }
+
+  #map {
+	width: 400px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+  }
+}
